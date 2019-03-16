@@ -39,11 +39,11 @@
     {
       "title": "Thing",
       "year": "1994",
-      "genre": "a",
-      "plot": "sdkfjaldkfjalksdf",
+      "genre": "Cool Stuff",
+      "plot": "Some Plot",
       "poster": "https://redq.io/blog/wp-content/uploads/2018/12/Awesome-React-Hooks.jpg",
       "id": 5,
-      "comment": "shite movie"
+      "comment": ""
     }
   ]
 }

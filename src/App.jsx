@@ -17,7 +17,7 @@ import './style.css';
 
 import styles from './style.module.css';
 
-const LinkButton = ({ to, ...rest }) => (to
+export const LinkButton = ({ to, ...rest }) => (to
   ? <Link {...{ to }}><Button {...rest} /></Link>
   : <Button {...rest} />
 );
@@ -36,6 +36,7 @@ class App extends Component {
             </AppBar>
             <Route exact path="/" component={Home} />
             <Route exact path="/new" component={Form} />
+            <Route exact path="/edit/:id" component={Form} />
           </div>
         </Router>
       </ThemeProvider>

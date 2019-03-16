@@ -3,6 +3,9 @@ import Card from 'react-toolbox/lib/card/Card';
 import CardMedia from 'react-toolbox/lib/card/CardMedia';
 import CardTitle from 'react-toolbox/lib/card/CardTitle';
 import CardText from 'react-toolbox/lib/card/CardText';
+import CardActions from 'react-toolbox/lib/card/CardActions';
+
+import { LinkButton } from '../../App';
 
 import styles from './style.module.css';
 import CommentBox from '../CommentsBox';
@@ -38,5 +41,8 @@ export default ({
         {...{ comment }}
       />
     </CardText>
+    <CardActions>
+      <LinkButton to={`/edit/${id}`} label="Edit this movie" />
+    </CardActions>
   </Card>
 );

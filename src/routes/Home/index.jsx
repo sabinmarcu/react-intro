@@ -5,6 +5,7 @@ import Link from 'react-toolbox/lib/link/Link';
 import Movie from '../../components/MovieComponent';
 
 import styles from './style.module.css';
+import data from './data.json';
 
 export default () => (
   <div className={styles.wrapper}>
@@ -16,7 +17,7 @@ export default () => (
       </Navigation>
     </AppBar>
     <div className={styles.list}>
-      <Movie />
+      <Movie {...data} />
     </div>
   </div>
 );

@@ -6,17 +6,19 @@ import CardText from 'react-toolbox/lib/card/CardText';
 
 import styles from './style.module.css';
 
-export default () => (
+export default ({
+  title,
+  year,
+  genre,
+  plot,
+  poster,
+}) => (
   <Card className={styles.card}>
     <CardMedia
-      image="https://images-na.ssl-images-amazon.com/images/I/51ih4cPagFL.jpg"
+      image={poster}
       aspectRatio="square"
     />
-    <CardTitle title="Star Wars: The Last Jedi" subtitle="Action, Adventure, Fantasy (2017)" />
-    <CardText>
-      Rey develops her newly discovered abilities with the guidance of Luke Skywalker,
-      who is unsettled by the strength of her powers. Meanwhile,
-      the Resistance prepares to do battle with the First Order.
-    </CardText>
+    <CardTitle title={title} subtitle={`${genre} (${year})`} />
+    <CardText>{plot}</CardText>
   </Card>
 );

@@ -36,7 +36,8 @@
       "MENU",
       "NAVIGATION",
       "LAYOUT",
-      "CARD"
+      "CARD",
+      "INPUT"
     ],
     "customProperties": {
       "animation-duration": "0.3s",

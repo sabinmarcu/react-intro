@@ -17,7 +17,9 @@ export default () => (
       </Navigation>
     </AppBar>
     <div className={styles.list}>
-      <Movie {...data} />
+      {data.movies.map(({ id, ...rest }) => (
+        <Movie key={id} {...rest} />
+      ))}
     </div>
   </div>
 );

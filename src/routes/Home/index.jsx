@@ -2,9 +2,8 @@ import React from 'react';
 import AppBar from 'react-toolbox/lib/app_bar/AppBar';
 import Navigation from 'react-toolbox/lib/navigation/Navigation';
 import Link from 'react-toolbox/lib/link/Link';
-import Movie from '../../components/MovieComponent';
 
-import styles from './style.css';
+import styles from './style.module.css';
 
 export default () => (
   <div className={styles.wrapper}>

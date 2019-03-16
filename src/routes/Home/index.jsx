@@ -2,6 +2,7 @@ import React from 'react';
 import AppBar from 'react-toolbox/lib/app_bar/AppBar';
 import Navigation from 'react-toolbox/lib/navigation/Navigation';
 import Link from 'react-toolbox/lib/link/Link';
+import Movie from '../../components/MovieComponent';
 
 import styles from './style.module.css';
 
@@ -14,5 +15,8 @@ export default () => (
         <Link href="http://react-toolbox.io/#/">React Toolbox</Link>
       </Navigation>
     </AppBar>
+    <div className={styles.list}>
+      <Movie />
+    </div>
   </div>
 );

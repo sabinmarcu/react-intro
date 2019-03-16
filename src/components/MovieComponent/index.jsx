@@ -7,32 +7,36 @@ import CardText from 'react-toolbox/lib/card/CardText';
 import styles from './style.module.css';
 import CommentBox from '../CommentsBox';
 
-export default class MovieComponent extends Component {
-  state = {
-    comment: '',
-  }
-
-  render() {
-    const {
-      title,
-      year,
-      genre,
-      plot,
-      poster,
-    } = this.props;
-    const { comment } = this.state;
-    return (
-      <Card className={styles.card}>
-        <CardMedia
-          image={poster}
-          aspectRatio="square"
-        />
-        <CardTitle title={title} subtitle={`${genre} (${year})`} />
-        <CardText>{plot}</CardText>
-        <CardText>
-          <CommentBox onChange={value => this.setState({ comment: value })} {...{ comment }} />
-        </CardText>
-      </Card>
-    );
-  }
-}
+export default ({
+  title,
+  year,
+  genre,
+  plot,
+  poster,
+  comment,
+  onUpdate,
+  id,
+}) => (
+  <Card className={styles.card}>
+    <CardMedia
+      image={poster}
+      aspectRatio="square"
+    />
+    <CardTitle title={title} subtitle={`${genre} (${year})`} />
+    <CardText>{plot}</CardText>
+    <CardText>
+      <CommentBox
+        onChange={
+          value => fetch(`http://localhost:8000/movies/${id}`, {
+            method: 'PATCH',
+            headers: {
+              Accept: 'application/json',
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ comment: value }),
+          }).then(onUpdate)}
+        {...{ comment }}
+      />
+    </CardText>
+  </Card>
+);

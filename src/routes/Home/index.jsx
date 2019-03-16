@@ -11,11 +11,13 @@ export default class HomeComponent extends Component {
     movies: [],
   }
 
-  componentWillMount() {
-    fetch('http://localhost:8000/movies')
-      .then(data => data.json())
-      .then(movies => this.setState({ movies }));
+  componentDidMount() {
+    this.updateData();
   }
+
+  updateData = () => fetch('http://localhost:8000/movies')
+    .then(data => data.json())
+    .then(movies => this.setState({ movies }));
 
   render() {
     const { movies } = this.state;
@@ -30,7 +32,7 @@ export default class HomeComponent extends Component {
         </AppBar>
         <div className={styles.list}>
           {movies.map(({ id, ...rest }) => (
-            <Movie key={id} {...rest} />
+            <Movie key={id} {...{ ...rest, id }} onUpdate={this.updateData} />
           ))}
         </div>
       </div>

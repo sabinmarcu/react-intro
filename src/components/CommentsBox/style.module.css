@@ -1,0 +1,15 @@
+
+.comment { 
+  position: relative;
+  padding: 20px 10px 10px 20px;
+  background: #eee;
+}
+.comment::before {
+  position: absolute;
+  left: 0;
+  top: 0;
+  content: "\"";
+  opacity: 0.2;
+  font-size: 30px;
+  font-style: oblique;
+}

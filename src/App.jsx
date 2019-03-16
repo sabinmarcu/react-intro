@@ -6,6 +6,7 @@ import theme from './assets/react-toolbox/theme';
 import Home from './routes/Home';
 
 import './assets/react-toolbox/theme.css';
+import './style.css';
 
 class App extends Component {
   render() {

@@ -35,7 +35,8 @@
       "LINK",
       "MENU",
       "NAVIGATION",
-      "LAYOUT"
+      "LAYOUT",
+      "CARD"
     ],
     "customProperties": {
       "animation-duration": "0.3s",
